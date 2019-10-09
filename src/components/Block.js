@@ -3,7 +3,7 @@ import React from 'react'
 export default function Block(props) {
     return (
       
-        <button>
+        <button className="block" onClick={props.onClick}>
             {props.value}
         </button>
     )
