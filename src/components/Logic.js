@@ -12,18 +12,21 @@ export default class Logic extends Component {
             ]
         }
     }
-
+    handleClick(i)
+    {
+      console.log(i);
+    }
     render() {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
-        
+
         return (
            <div className="logic">
                <div className="logic-userboard">
-               <UserBoard onClick={(i)=>this.onClick(i)}
+               <UserBoard onClick={(i)=>this.handleClick(i)}
                    blocks={current.blocks}
                    />
-                   
+
                </div>
            </div>
         )
