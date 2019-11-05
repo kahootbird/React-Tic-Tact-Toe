@@ -14,7 +14,19 @@ export default class Logic extends Component {
     }
     handleClick(i)
     {
-      console.log(i);
+      const history = this.state.history.slice(0,this.state.stepNumber+1)
+      const current = history[history.length-1];
+      const blocks = current.blocks.slice();
+      blocks[i] = this.state.xIsNext?'X':'O';
+      this.setState({
+        history: history.concat({
+          blocks: blocks
+        }),
+        xIsNext: !this.state.xIsNext,
+        stepNumber: history.length
+
+      })
+      console.log(blocks)
     }
     render() {
         const history = this.state.history;
